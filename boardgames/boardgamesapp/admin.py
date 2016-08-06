@@ -1,3 +1,8 @@
 from django.contrib import admin
+from . import models
 
-# Register your models here.
+class BotAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(models.Bot,BotAdmin)
+

@@ -1,4 +1,9 @@
 <body>
+    {% if request.user.is_authenticated %}
+    <div style='float: right;'>
+    Welcome: {{request.user.username}} <a href='/logout?next=/accounts/login'>logout</a>
+    </div>
+    {% endif %} 
     {% block content %}
     {% endblock %}
 </body>

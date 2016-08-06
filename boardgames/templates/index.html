@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+    <h3>Your Bot Information</h3>
+
+    {% if bot %}
+    <table border="1">
+    <tr><td><strong>username</strong></td><td>{{bot.user}}</td></tr>
+    <tr><td><strong>bot name</strong></td><td>{{bot.bot_name}}</td></tr>
+    <tr><td><strong>bot folder</strong></td><td>{{bot.path}}</td></tr>
+    </table>
+    {% else %}
+    Not Available
+    {% endif %}
+</div>
+
+{% if request.user.is_staff %}
+<div>
+    <h3>Site Administration<h3>
+    <ul>
+    <li><a href="/admin">Django Admin Page</a></li>
+    <li><a href="/shell/">Server Administration Shell</a></li>
+    </ul>
+</div>
+{% endif %}
+
+{% endblock %}
+
