@@ -10,10 +10,18 @@
     <tr><td><strong>username</strong></td><td>{{bot.user}}</td></tr>
     <tr><td><strong>bot name</strong></td><td>{{bot.bot_name}}</td></tr>
     <tr><td><strong>bot folder</strong></td><td>{{bot.path}}</td></tr>
+    <tr><td><strong>folder contents</strong></td><td><pre>{{bot.folder_contents}}</pre></td></tr>
     </table>
     {% else %}
     Not Available
     {% endif %}
+
+    <h3>Upload a Bot File</h3>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Upload"/>
+    </form>
 </div>
 
 {% if request.user.is_staff %}
