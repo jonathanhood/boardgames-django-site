@@ -17,6 +17,7 @@
     {% endif %}
 
     <h3>Upload a Bot File</h3>
+    <p><em>Note:</em> .tgz and .tar.gz files will be automatically expaneded after upload</p>
     <form action="/upload" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{form.as_p}}
